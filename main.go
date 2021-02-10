@@ -20,16 +20,24 @@ func main() {
 	ls.Insertar("antonio", "cañas", 30, "antigua", "marino", "vientos", "Desactivo")
 	ls.Insertar("luisa", "diaz", 22, "zona 2", "civil", "estructural", "Desactivo")
 	ls.Insertar("kathy", "monterrosa", 29, "san francisco", "auditoria", "planillas", "Desactivo")
+	var des int
+	for des != 3 {
+		fmt.Println("Bienvenido, selecciona la opcion que desees realizar:")
+		fmt.Println("1. Modificar 2.Mostrar 3. Salir")
 
-	//	ls.Imprimir()
-	fmt.Println("Ingrese nombre y apellido de estudiante a modificar en minusculas: ")
-	fmt.Println("Nombre: ")
-	fmt.Scanln(&nm)
-	fmt.Println("Apellido: ")
-	fmt.Scanln(&ape)
+		fmt.Scanln(&des)
 
-	ls.Modificar(nm, ape)
-
-	ls.Imprimir()
+		if des == 1 {
+			fmt.Println("Ingrese nombre y apellido de estudiante a modificar en minusculas: ")
+			fmt.Println("Nombre: ")
+			fmt.Scanln(&nm)
+			fmt.Println("Apellido: ")
+			fmt.Scanln(&ape)
+			ls.Modificar(nm, ape)
+		}
+		if des == 2 {
+			ls.Imprimir()
+		}
+	} // fin de for
 
 }
